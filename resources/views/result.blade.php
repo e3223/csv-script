@@ -60,21 +60,34 @@
                 margin-top: 30px;
                 
             }
-
+            .new{
+                font-size: 25px ;
+                height: 50px;
+                width: 240px;
+                background-color: #9e9e9e;
+                color: #dbdbdb;
+                padding: 8px;
+                align-items: center;
+                display: flex;
+                justify-content: center;
+                vertical-align: middle;
+                margin: 0 auto;
+                margin-top: 30px;
+                border: none;
         </style>
     </head>
     <body>
     <input type="hidden" name="_token" value="{!! csrf_token() !!}">    
         <h3>Select Column to Apply Row Deletion</h3>
-        <form>
+        <form id="column-form" name="column-form" action="{{route('post.column', ['data'=>$data])}}">
             @foreach (array_keys($data[0]) as $data)
            
-            <div class="column"> <input type="checkbox" id="chek"/><label for="chek">{{ $data}}</label></div>    
+            <div class="column"> <input type="radio" name="column" id="chek" value="{{$data}}"/><label for="chek">{{ $data}}</label></div>    
         
             @endforeach
             
         </form>
-        <h1>CONFIRM</h1>
+         <button class="new" type="submit" id="column-form" form="column-form" value="Submit">CONFIRM</button>
         
     </body>
 

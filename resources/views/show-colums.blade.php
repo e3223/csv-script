@@ -58,6 +58,21 @@
                 margin-top: 30px;
                 
             }
+            .new{
+                /*display: block;*/
+                font-size: 25px ;
+                height: 50px;
+                width: 240px;
+                background-color: #9e9e9e;
+                color: #dbdbdb;
+                padding: 8px;
+                align-items: center;
+                display: flex;
+                justify-content: center;
+                vertical-align: middle;
+                margin: 0 auto;
+                margin-top: 30px;
+                border: none;
         </style>
     </head>
     <body>
@@ -66,7 +81,7 @@
         <form>
             <div class="column"></div>    
         </form>
-        <h1>CONFIRM</h1>
+        <button class="new" type="submit" form="form" value="Submit">APPLY</button>
         
     </body>
 

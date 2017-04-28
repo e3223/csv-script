@@ -1,5 +1,6 @@
 <?php
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,6 +17,13 @@ Route::get('/', function () {
 });
 Route::get('/show-colums', function () {
     return view('show-colums');
+});
+Route::get('/keywords', function () {
+    return view('keywords');
+});
+
+Route::get('/ff', function() {
+    return view('final');
 });
 /*
 Route::get('show-colums', function(Request $request) {
@@ -40,3 +48,6 @@ Route::get('show-colums', function(Request $request) {
 );
 */
 Route::post('/uploaded',   ['as'=>'post.uploaded' , 'uses' => 'uploadController@uploadCsv']);
+
+Route::post('/keys', ['as'=>'post.keys', 'uses'=>'uploadController@keys']);
+Route::get('/column',['as'=>'post.column', 'uses'=>'uploadController@storeColumn']);
