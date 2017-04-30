@@ -43,15 +43,18 @@ class UploadController extends Controller
     
     //get csv-data and send colmn value to next view(/keywords)
     public function storeColumn(Request $request){
-        $data = $request->data;
+        $data = $request->get('data');
         $column = $request->column;
-        return view('keywords')->with('column',$column)->with('data', $data);
+        
+        return view('keywords')
+                ->with('column',$column)
+                ->with('data',$data);
     }
     //get keys and values to delete row
     public function keys(Request $request){
         $row_value = $request->row_value;
         $col_value = $request->column;
-        $data = $request->data;
+        $data = $request->get('data');
 	
         foreach ( $data as $key => $value )
     {
@@ -60,7 +63,12 @@ class UploadController extends Controller
             unset( $data[$key] );
         }
     }
-	//return $data;
-	return view('final')->with($data); 
+	 $fp = fopen('new.csv', w);
+            foreach($data as $fields){
+                fputcsv($fp, $fields);
+            }
+                fclose($fp);
+        //return $data;
+	//return view('final')->with($data); 
     } 
 }

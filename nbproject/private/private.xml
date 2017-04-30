@@ -6,7 +6,8 @@
             <file>file:/F:/csv-script/routes/web.php</file>
             <file>file:/F:/csv-script/app/Http/Controllers/UploadController.php</file>
             <file>file:/F:/csv-script/resources/views/result.blade.php</file>
-            <file>file:/F:/csv-script/resources/views/show-colums.blade.php</file>
+            <file>file:/F:/csv-script/resources/views/keywords.blade.php</file>
+            <file>file:/F:/csv-script/resources/views/final.blade.php</file>
             <file>file:/F:/csv-script/resources/views/welcome.blade.php</file>
         </group>
     </open-files>

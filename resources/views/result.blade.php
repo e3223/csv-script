@@ -83,9 +83,8 @@
             @foreach (array_keys($data[0]) as $data)
            
             <div class="column"> <input type="radio" name="column" id="chek" value="{{$data}}"/><label for="chek">{{ $data}}</label></div>    
-        
+  
             @endforeach
-            
         </form>
          <button class="new" type="submit" id="column-form" form="column-form" value="Submit">CONFIRM</button>
         
