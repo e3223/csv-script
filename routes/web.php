@@ -25,31 +25,10 @@ Route::get('/keywords', function () {
 Route::get('/ff', function() {
     return view('final');
 });
-/*
-Route::get('show-colums', function(Request $request) {
-    $uploaded_csv = $request->file('file');
-     
-       $header = NULL;
-	$data = array();
-	if (($handle = fopen($uploaded_csv,'r')) !== FALSE)
-	{
-            while (($row = fgetcsv($handle, 1000)) !== FALSE)
-            {
-                if(!$header)
-                    $header = $row;
-		else
-                    $data[] = array_combine($header, $row);
-            }
-		fclose($handle);
-	}
-	return redirect('/show-colums')->with($data);
-        
-    }
-);
-*/
-Route::post('/uploaded',   ['as'=>'post.uploaded' , 'uses' => 'uploadController@uploadCsv']);
 
-Route::post('/keys', ['as'=>'post.keys', 'uses'=>'uploadController@keys']);
-Route::get('/column',['as'=>'post.column', 'uses'=>'uploadController@storeColumn']);
+Route::post('/uploaded',   ['as'=>'post.uploaded' , 'uses' => 'UploadController@uploadCsv']);
+
+Route::post('/keys', ['as'=>'post.keys', 'uses'=>'UploadController@keys']);
+Route::get('/column',['as'=>'post.column', 'uses'=>'UploadController@storeColumn']);
 
 Route::get('downloadExcel/csv', 'UploadController@download');

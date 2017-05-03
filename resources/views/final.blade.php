@@ -80,17 +80,7 @@
         <h1 id="upload" ><a href="{{ URL::to('downloadExcel/csv') }}">Download CSV</a></h1>
         <input type="file" accept=".csv" id="inpFile" name="file" style="display:none;" />
        
-       <!--<script include src="/js/jquery-1.7.1.min.js"></script>      
-        <script type="text/javascript">      
-           
-        $("#upload").click(function(e) {
-        $(inpFile).click();
-        });
-        
-        document.getElementById("inpFile").onchange = function() {
-        document.getElementById("form").submit();-->
-        };
-        </script>
+      
         
     </body>
 </html>
