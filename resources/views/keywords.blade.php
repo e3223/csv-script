@@ -58,7 +58,7 @@
     <body>
     <input type="hidden" name="_token" value="{!! csrf_token() !!}">    
         <h3> Enter Keywords (Contains) </h3>
-        <form method='POST' id="keywords" name="keywords" action="{{route('post.keys', ['column' => $column , 'data' => $data])}}">
+        <form method='POST' id="keywords" name="keywords" action="{{route('post.keys')}}">
         <input type="hidden" name="_token" value="{!! csrf_token() !!}">    
             <textarea  class="wideInput" name="row_value"  required></textarea>
             

@@ -51,3 +51,5 @@ Route::post('/uploaded',   ['as'=>'post.uploaded' , 'uses' => 'uploadController@
 
 Route::post('/keys', ['as'=>'post.keys', 'uses'=>'uploadController@keys']);
 Route::get('/column',['as'=>'post.column', 'uses'=>'uploadController@storeColumn']);
+
+Route::get('downloadExcel/csv', 'UploadController@download');
