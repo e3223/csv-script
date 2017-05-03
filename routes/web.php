@@ -22,10 +22,6 @@ Route::get('/keywords', function () {
     return view('keywords');
 });
 
-Route::get('/ff', function() {
-    return view('final');
-});
-
 Route::post('/uploaded',   ['as'=>'post.uploaded' , 'uses' => 'UploadController@uploadCsv']);
 
 Route::post('/keys', ['as'=>'post.keys', 'uses'=>'UploadController@keys']);

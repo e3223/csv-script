@@ -79,10 +79,10 @@
     <body>
     <input type="hidden" name="_token" value="{!! csrf_token() !!}">    
         <h3>Select Column to Apply Row Deletion</h3>
-        <form id="column-form" name="column-form" action="{{route('post.column', ['data' => $data])}}">
+        <form id="column-form" name="column-form" action="{{route('post.column')}}">
             @foreach (array_keys($data[0]) as $data)
            
-            <div class="column"> <input type="radio" name="column" id="chek" value="{{$data}}"/><label for="chek">{{ $data}}</label></div>    
+            <div class="column"> <input type="radio" name="column" id="chek" required value="{{$data}}"/><label for="chek">{{ $data}}</label></div>    
   
             @endforeach
             
