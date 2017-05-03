@@ -65,12 +65,5 @@ class UploadController extends Controller
 		})->download('csv');
         
     }
-	 /*$fp = fopen('new.csv', 'w');
-            foreach($data as $fields){
-                fputcsv($fp, $fields);
-            }
-                fclose($fp);*/
-        //return $data;
-	//return view('final')->with($data); 
     } 
 
