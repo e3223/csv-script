@@ -49,18 +49,12 @@ class UploadController extends Controller
         }
         \Session::put('parsed', $resulted);
             
-            return view('final');     
-    }
-       
-    public function download() {
-        $data = \Session::get('parsed');
-            return Excel::create('result_file', function($excel) use ($data) {
-                $excel->sheet('mySheet', function($sheet) use ($data)
+            return Excel::create('result_file', function($excel) use ($resulted) {
+                $excel->sheet('mySheet', function($sheet) use ($resulted)
 	        {
-                    $sheet->fromArray($data);
+                    $sheet->fromArray($resulted);
 	        });
-		})->download('csv');
-        
+		})->download('csv');     
     }
 } 
 
