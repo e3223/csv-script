@@ -1,6 +1,4 @@
 <?php
-use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,10 +19,9 @@ Route::get('/show-colums', function () {
 Route::get('/keywords', function () {
     return view('keywords');
 });
+Route::post('/uploaded',   ['as'=>'post.uploaded' , 'uses' => 'UploadController@getHeaders']);
 
-Route::post('/uploaded',   ['as'=>'post.uploaded' , 'uses' => 'UploadController@uploadCsv']);
+Route::get('/column',['as'=>'post.column', 'uses'=>'UploadController@getKeywords']);
 
-Route::post('/keys', ['as'=>'post.keys', 'uses'=>'UploadController@keys']);
-Route::get('/column',['as'=>'post.column', 'uses'=>'UploadController@storeColumn']);
-
+Route::post('/keys', ['as'=>'post.keys', 'uses'=>'UploadController@deleteRows']);
 Route::get('downloadExcel/csv', 'UploadController@download');
