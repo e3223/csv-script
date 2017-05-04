@@ -36,13 +36,14 @@ class UploadController extends Controller
  
     public function keys(Request $request){
         $row_value = explode("\r\n", $request->row_value);
+        $row =  $request->row_value;
         $col_value = \Session::get('column');
         $data = \Session::get('data');
 	$resulted = array();
         
         foreach ( $data as $key => $value )
         {
-            if ( !in_array($value[$col_value], $row_value) )
+            if ( FALSE === strpos($value[$col_value], $row) )
             {
                 $resulted[] = $data[$key];
             }
@@ -54,7 +55,7 @@ class UploadController extends Controller
 	        {
                     $sheet->fromArray($resulted);
 	        });
-		})->download('csv');     
+		})->download('csv');    
     }
 } 
 
