@@ -36,14 +36,13 @@ class UploadController extends Controller
  
     public function keys(Request $request){
         $row_value = explode("\r\n", $request->row_value);
-        $row =  $request->row_value;
         $col_value = \Session::get('column');
         $data = \Session::get('data');
-	$resulted = array();
+        $resulted = array();
         
         foreach ( $data as $key => $value )
         {
-            if ( FALSE === strpos($value[$col_value], $row) )
+            if (!preg_match('/'.implode('|', $row_value).'/i', $value[$col_value], $matches))
             {
                 $resulted[] = $data[$key];
             }
